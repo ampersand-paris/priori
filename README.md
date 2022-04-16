@@ -19,7 +19,7 @@ I want to keep the number of tasks per day at a manageable number. <br>
 I want to know that I completed a task. <br>
 I want to experience my to do list in a sense of ease. <br>
 
-Stretch:
+Stretch:<br>
 I want to be able to organize my tasks by category tags. <br>
 I want to be able to prioritize the single most important tast of the day. <br>
 
