@@ -14,7 +14,7 @@ I want to delete a task on a to-do list. <br>
 I want to be able to edit a task on a to-do list. <br>
 I want to be able to add a description to my task. <br>
 I want to be able to assign tasks to days of the week. <br>
-I want to be able to assing many tasks to many days. <br>
+I want to be able to assign many tasks to many days. <br>
 I want to keep the number of tasks per day at a manageable number. <br>
 I want to know that I completed a task. <br>
 I want to experience my to do list in a sense of ease. <br>
