@@ -1,5 +1,7 @@
 # PRIORI
-A todo list for perfectionists with overwhelm
+A todo list for perfectionists with overwhelm. 
+
+PRIORI is about prioritization. PRIORI is at its heart, a simple to-do list, that has been reimagined to keep perfectionists taking consistent and directed action towards their most important goals. The app's most unique feature is a limit of three assigned tasks to a single day of the week. No more procrastination from forever lists, only forever action.  
 
 # USER STORIES
 As a perfectionist:
