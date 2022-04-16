@@ -4,18 +4,24 @@ A todo list for perfectionists with overwhelm.
 PRIORI is about prioritization. PRIORI is at its heart, a simple to-do list, that has been reimagined to keep perfectionists taking consistent and directed action towards their most important goals. The app's most unique feature is a limit of three assigned tasks to a single day of the week. No more procrastination from forever lists, only forever action.  
 
 # USER STORIES
-As a perfectionist:
+As a user:
 
-I want to create a detailed and manageable to-do list.
-I want to be able to add a description to my task. 
-I want to be able to assign tasks to days of the week. 
-I want to keep the number of tasks per day at a manageable number. 
-I want to experience satisfation when a task is completed.
-I want to experience my to do list in a sense of ease. 
+I want to be able to create an account. <br>
+I want to be able to login. <br>
+I want to be able to logout. <br>
+I want to be able to create a task on a to-do list. <br>
+I want to delete a task on a to-do list. <br>
+I want to be able to edit a task on a to-do list. <br>
+I want to be able to add a description to my task. <br>
+I want to be able to assign tasks to days of the week. <br>
+I want to be able to assing many tasks to many days. <br>
+I want to keep the number of tasks per day at a manageable number. <br>
+I want to know that I completed a task. <br>
+I want to experience my to do list in a sense of ease. <br>
 
 Stretch:
-I want to be able to organize my tasks by category tags. 
-I want to be able to prioritize the single most important tast of the day.
+I want to be able to organize my tasks by category tags. <br>
+I want to be able to prioritize the single most important tast of the day. <br>
 
 All this, so that I might stay on task and keep from being overwelmed. 
 
