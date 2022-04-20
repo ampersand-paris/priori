@@ -48,3 +48,6 @@ def login_view(request):
 
 class Todos(TemplateView):
     template_name = "todos.html"
+
+class Home(TemplateView):
+    template_name = "home.html"
