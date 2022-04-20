@@ -30,17 +30,17 @@ All this, so that I might stay on task and keep from being overwelmed.
 
 # WIREFRAMES
 Desktop
-![Desktop Login](/Images/PRIORI_DESKTOP_LOGIN.png)
-![Desktop Sign Up](/Images/PRIORI_DESKTOP_SIGN_UP.png)
-![Desktop To Do's](/Images/PRIORI_DESKTOP_TODOS.png)
-![Desktop Edit and Delete](/Images/PRIORI_DESKTOP_EDIT_DELETE.png)
-![Desktop Days](/Images/PRIORI_DESKTOP_DAYS.png)
+![Desktop Login](/README%20Images/PRIORI_DESKTOP_LOGIN.png)
+![Desktop Sign Up](/README%20Images/PRIORI_DESKTOP_SIGN_UP.png)
+![Desktop To Do's](/README%20Images/PRIORI_DESKTOP_TODOS.png)
+![Desktop Edit and Delete](/README%20Images/PRIORI_DESKTOP_EDIT_DELETE.png)
+![Desktop Days](/README%20Images/PRIORI_DESKTOP_DAYS.png)
 
 Mobile
-![Mobile Login](/Images/PRIORI_MOBILE_LOGIN.png)
-![Mobile Sign Up](/Images/PRIORI_MOBILE_SIGN_UP.png)
-![Mobile To Do's](/Images/PRIORI_MOBILE_TODOS.png)
-![Mobile Edit and Delete](/Images/PRIORI_MOBILE_EDIT_DELETE.png)
-![Mobile Days](/Images/PRIORI_MOBILE_DAYS.png)
+![Mobile Login](/README%20Images/PRIORI_MOBILE_LOGIN.png)
+![Mobile Sign Up](/README%20Images/PRIORI_MOBILE_SIGN_UP.png)
+![Mobile To Do's](/README%20Images/PRIORI_MOBILE_TODOS.png)
+![Mobile Edit and Delete](/README%20Images/PRIORI_MOBILE_EDIT_DELETE.png)
+![Mobile Days](/README%20Images/PRIORI_MOBILE_DAYS.png)
 
 
