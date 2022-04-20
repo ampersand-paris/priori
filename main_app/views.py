@@ -58,11 +58,18 @@ class Profile(CreateView):
     template_name = "todos.html"
     success_url = "/profile/"
     
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["tasks"] = Task.objects.all()
+        # tasks = Task.objects.filter(user=user)
+        return context
+
     def form_valid(self, form):
         self.object = form.save(commit=False)
         self.object.user = self.request.user
         self.object.save()
         return HttpResponseRedirect("/profile/")
 
+   
 class Home(TemplateView):
     template_name = "home.html"
