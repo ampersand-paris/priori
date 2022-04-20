@@ -18,7 +18,7 @@ class Task(models.Model):
     task = models.CharField(max_length=50)
     description = models.CharField(max_length=250)
     days = models.CharField(max_length=10, choices=DAY_CHOICES)
-    is_complete = models.BooleanField()
+    is_complete = models.BooleanField(default=False)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     
     def __str__(self):

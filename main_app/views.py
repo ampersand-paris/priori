@@ -58,6 +58,11 @@ class Profile(CreateView):
     template_name = "todos.html"
     success_url = "/profile/"
     
+    def form_valid(self, form):
+        self.object = form.save(commit=False)
+        self.object.user = self.request.user
+        self.object.save()
+        return HttpResponseRedirect("/profile/")
 
 class Home(TemplateView):
     template_name = "home.html"
