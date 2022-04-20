@@ -1,0 +1,21 @@
+/* === ROOT STYLES === */
+
+:root {
+    --main-green: #00ff99;
+}
+
+h1 {
+    color: var(--main-green);
+}
+
+body {
+    margin: 0;
+}
+.background {
+    display: flex;
+    height: calc(100vH - 30px);
+    justify-content: center;
+    width: calc(100vW - 30px);
+    border: 15px solid var(--main-green);
+    
+}
