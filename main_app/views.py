@@ -1,18 +1,20 @@
 from django.shortcuts import render
 from django.views.generic.base import TemplateView
 from django.contrib.auth import authenticate, login, logout
+from django.http import HttpResponseRedirect
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
+from django.contrib.auth.models import User
 
 # Create your views here.
 
 def signup_view(request):
     if request.method == 'POST':
         form = UserCreationForm(request.POST)
-        if form.is_valid:
+        if form.is_valid():
             user = form.save()
             login(request, user)
             print('User: ', user.username)
-            return HttpResponseRedirect('/todos/')
+            return HttpResponseRedirect('/profile/')
         else:
             return render(request, 'signup.html', {'form': form})
     else:
@@ -33,7 +35,7 @@ def login_view(request):
             if user is not None:
                 if user.is_active:
                     login(request, user)
-                    return HttpResponseRedirect('/todos/')
+                    return HttpResponseRedirect('/profile/')
                 else: 
                     print('The account has been disabled.')
                     return render(request, 'login.html', {'form': form})
@@ -46,7 +48,7 @@ def login_view(request):
         form = AuthenticationForm()
         return render(request, 'login.html', {'form': form})
 
-class Todos(TemplateView):
+class Profile(TemplateView):
     template_name = "todos.html"
 
 class Home(TemplateView):
