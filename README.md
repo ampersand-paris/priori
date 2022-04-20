@@ -26,7 +26,7 @@ I want to be able to prioritize the single most important tast of the day. <br>
 All this, so that I might stay on task and keep from being overwelmed. 
 
 # ERD
-![ERD](/Images/PRIORI-ERD.png)
+![ERD](/README%20Images/PRIORI-ERD.png)
 
 # WIREFRAMES
 Desktop
