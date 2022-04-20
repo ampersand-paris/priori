@@ -4,6 +4,10 @@ from django.contrib.auth import authenticate, login, logout
 from django.http import HttpResponseRedirect
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.models import User
+from django.views.generic.edit import CreateView
+
+from main_app.models import Task
+
 
 # Create your views here.
 
@@ -48,8 +52,12 @@ def login_view(request):
         form = AuthenticationForm()
         return render(request, 'login.html', {'form': form})
 
-class Profile(TemplateView):
+class Profile(CreateView):
+    model = Task
+    fields = ['task', 'description', 'days']
     template_name = "todos.html"
+    success_url = "/profile/"
+    
 
 class Home(TemplateView):
     template_name = "home.html"
