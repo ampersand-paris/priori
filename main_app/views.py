@@ -44,7 +44,10 @@ def login_view(request):
             return render(request, 'signup.html', {'form': form})
     else: 
         form = AuthenticationForm()
-        return render(request, 'longin.html', {'form': form})
-             
+        return render(request, 'login.html', {'form': form})
+
 class Todos(TemplateView):
     template_name = "todos.html"
+
+class Home(TemplateView):
+    template_name = "home.html"
