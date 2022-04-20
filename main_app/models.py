@@ -14,7 +14,7 @@ DAY_CHOICES = (
 )
 class Task(models.Model):
 
-    task = models.CharField(max_lenth=50)
+    task = models.CharField(max_length=50)
     description = models.CharField(max_length=250)
     days = models.CharField(max_length=10, choices=DAY_CHOICES)
     is_complete = models.BooleanField()
