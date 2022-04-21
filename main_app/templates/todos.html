@@ -8,9 +8,22 @@
 {% block body %}
     <h1>PRIORI</h1>
     {% if user.is_authenticated %}
-    <h3>{{ user.username }}</h3><h3><a href="/logout/">Logout</a></h3>
+    <h3>{{ user.username }}</h3><h3><a href="/accounts/logout/">Logout</a></h3>
     {% endif %}
     <div>
         <h2>To Do:</h2>
+        {% for task in tasks %}
+            {% if task.user == user %}
+                <h3>{{ task.task }}</h3>
+            {% endif %}
+        {% endfor %}
+        {% if user.is_authenticated %}
+        <form method="POST">
+            {% csrf_token %}
+            {{form.as_p}}
+            <input type="submit" value="Submit" />
+        </form>
+        {% endif %}
     </div>
+    
 {% endblock %}
