@@ -26,3 +26,11 @@ class Task(models.Model):
     
     class Meta:
         ordering = []
+
+class Day(models.Model):
+
+    day = models.CharField(max_length=10, choices=DAY_CHOICES)
+    tasks = models.ManyToManyField(Task)
+
+    def __str__(self):
+        return self.day
