@@ -2,20 +2,71 @@
 
 :root {
     --main-green: #00ff99;
+    --main-pink: #ffcccc;
+    --main-blue: #1b1464;
 }
 
 h1 {
     color: var(--main-green);
+    font-family: century-gothic, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 3em;
+    margin: 0;
+    padding: 0;
+}
+
+h3 {
+    color: white;
+    font-family: century-gothic, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1em;
+    margin: 0;
+    padding: 0;
+}
+
+h3 a {
+    color: white;
+    text-decoration: none;
 }
 
 body {
     margin: 0;
 }
-.background {
+
+.background {     
+    background: linear-gradient(130deg, var(--main-pink) 0%, var(--main-blue) 50%, 
+    var(--main-blue) 85%, rgba(0, 255, 153, .6) 100%);
     display: flex;
-    height: calc(100vH - 30px);
-    justify-content: center;
-    width: calc(100vW - 30px);
-    border: 15px solid var(--main-green);
-    
+    flex-direction: column;
+    height: calc(100vH - 10px);
+    align-items: center;
+    width: calc(100vW - 10px);
+    border: 5px solid var(--main-green);
 }
+
+.background-overlay {
+    background: linear-gradient(240deg, var(--main-pink) 0%,var(--main-pink) 15%, transparent 30%);
+    display: flex;
+    flex-direction: column;
+    height: calc(100vH - 10px);
+    align-items: center;
+    width: calc(100vW - 10px);
+}
+
+.flex {
+    display: flex;
+}
+
+.space-btwn {
+    justify-content: space-between;
+}
+
+/* === HEADER STYLES === */
+
+.header {
+    margin-top: 2vH;
+    width: 33vW;
+}
+
