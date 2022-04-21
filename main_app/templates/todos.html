@@ -6,10 +6,19 @@
 {% endblock %}
 
 {% block body %}
-    <h1>PRIORI</h1>
-    {% if user.is_authenticated %}
-    <h3>{{ user.username }}</h3><h3><a href="/accounts/logout/">Logout</a></h3>
-    {% endif %}
+    <div class="header">
+        <div class="flex space-btwn">
+            <h1>P</h1><h1>R</h1><h1>I</h1><h1>O</h1><h1>R</h1><h1>I</h1>
+        </div>
+        <div>
+            {% if user.is_authenticated %}
+                <div class="flex space-btwn"> 
+                    <h3>{{ user.username }}</h3>
+                    <h3><a href="/accounts/logout/">Logout</a></h3>
+                </div>
+            {% endif %}
+        </div>
+    </div>
     <div>
         <h2>To Do:</h2>
         {% for task in tasks %}
