@@ -73,3 +73,6 @@ class Profile(CreateView):
    
 class Home(TemplateView):
     template_name = "home.html"
+
+class Days(TemplateView):
+    template_name = "days.html"
