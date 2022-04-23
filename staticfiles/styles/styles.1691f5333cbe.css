@@ -51,6 +51,9 @@ h3 a {
     text-decoration: none;
 }
 
+#white {
+    color: white !important;
+}
 body {
     margin: 0;
 }
@@ -93,6 +96,16 @@ body {
 
 .col-center {
     align-items: center;
+}
+
+/* === FORM STYLES === */
+
+.transparent {
+    background-color: transparent;
+}
+
+.input-stnd {
+    background-color: transparent;
 }
 
 /* === HEADER STYLES === */

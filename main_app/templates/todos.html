@@ -20,8 +20,11 @@
         </div>
     </div>
     <div class="flex column tasks">
-        <h2>To Do:</h2>
-        <h2><a href="days/">Days:</a></h2>
+        <div class="flex space-btwn">
+            <h2>To Do</h2>
+            <span id="white"><h2>|</h2></span>
+            <h2><a id="white" href="days/">Days</a></h2>
+        </div>
         {% for task in tasks %}
             {% if task.user == user %}
                 {% if task.is_complete == False %}
@@ -44,8 +47,9 @@
         {% if user.is_authenticated %}
         <form method="POST" class="task">
             {% csrf_token %}
-            {{form.as_p}}
-            <input type="submit" value="Submit" />
+            {{ form.task }}
+            {{ form.description }}
+            <input type="submit" value="+" />
         </form>
         {% endif %}
     </div>
