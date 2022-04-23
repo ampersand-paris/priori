@@ -13,11 +13,13 @@ DAY_CHOICES = (
     ("Sat", "Saturday"),
     ("Sun", "Sunday")
 )
+
+
 class Task(models.Model):
 
     task = models.CharField(max_length=50)
     description = models.CharField(max_length=250)
-    days = models.CharField(max_length=10, choices=DAY_CHOICES)
+    # days = models.ManyToManyField(Day)
     is_complete = models.BooleanField(default=False)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     

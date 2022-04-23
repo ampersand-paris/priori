@@ -7,7 +7,7 @@
 {% block body %}
 
 {% load bootstrap4 %}
-{% bootstrap_css %}
+<!-- {% bootstrap_css %} -->
 {% bootstrap_javascript jquery='full' %}
 {{ form.media }}
 
@@ -24,14 +24,24 @@
             {% endif %}
         </div>
     </div>
-    <div>
-        <h2>Days</h2>
+    <div class="flex column tasks">
+        <h2><a href="/profile/">To Do:</a></h2>
+        <h2>Days:</h2>
         {% for day in days %}
-            {% if day.user == user %}
                 <div class="flex column task">
                     <h3>{{ day.day }}</h3>
+                    <p><a href="/profile/days/{{day.pk}}">Assign Task</a></p>
+                    {% for task in day.tasks.all %}
+                        <p>{{ task.task }}</p>
+                        <p><a href="/profile/{{task.pk}}">Edit</a></p>
+                    <p><a href="/profile/{{task.pk}}/delete">Delete</a></p>
+                    <!-- {% for task in day.task_set.all %}
+                        <p>{{ task.task }}</p>
+                        <p><a href="/profile/{{task.pk}}">Edit</a></p>
+                    <p><a href="/profile/{{task.pk}}/delete">Delete</a></p>
+                    {% endfor %}     -->
+                    {% endfor %}
                 </div>
-            {% endif %}
         {% endfor %}
         {% if user.is_authenticated %}
         <form method="POST">

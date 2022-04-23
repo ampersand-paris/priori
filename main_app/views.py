@@ -56,7 +56,7 @@ def login_view(request):
 
 class Profile(CreateView):
     model = Task
-    fields = ['task', 'description', 'days']
+    fields = ['task', 'description']
     template_name = "todos.html"
     success_url = "/profile/"
     
@@ -79,7 +79,7 @@ class Task_Delete(DeleteView):
 
 class Task_Update(UpdateView):
     model = Task
-    fields = ['task', 'description']
+    fields = ['task', 'description', 'days', 'is_complete']
     template_name = "task_update.html"
     success_url = "/profile/"    
 
@@ -108,3 +108,9 @@ class Days(CreateView):
         context["days"] = Day.objects.all()
         # tasks = Task.objects.filter(user=user)
         return context
+
+class Days_Update(UpdateView):
+    model = Day
+    fields = ['tasks']
+    template_name = "task_update.html"
+    success_url = "/profile/days/" 
