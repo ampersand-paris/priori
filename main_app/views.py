@@ -4,7 +4,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.http import HttpResponseRedirect
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.models import User
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import View, CreateView, UpdateView, DeleteView
 from django import forms
 from bootstrap_datepicker_plus.widgets import DatePickerInput
 
@@ -72,7 +72,17 @@ class Profile(CreateView):
         self.object.save()
         return HttpResponseRedirect("/profile/")
 
-   
+class Task_Delete(DeleteView):
+        model = Task
+        template_name = "task_delete.html"
+        success_url = "/profile/"
+
+class Task_Update(UpdateView):
+    model = Task
+    fields = ['task', 'description']
+    template_name = "task_update.html"
+    success_url = "/profile/"    
+
 class Home(TemplateView):
     template_name = "home.html"
 
