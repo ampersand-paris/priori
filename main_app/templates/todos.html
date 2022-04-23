@@ -41,10 +41,14 @@
                 {% if task.is_complete == True %}
                 <div class="flex task space-btwn">
                     <div class="flex column"> 
+                        <div class="complete">
+                        </div>
                         <h3>{{ task.task }}</h3>
                         <p>{{ task.description }}</p>
                     </div>
                     <div class="flex space-btwn column col-center">
+                        <div class="incomplete">
+                        </div>
                         <p><a id="green" href="/profile/{{task.pk}}">&#x21a9;</a></p>
                         <p><a id="red" href="/profile/{{task.pk}}/delete">X</a></p>
                     </div>

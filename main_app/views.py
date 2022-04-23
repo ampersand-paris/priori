@@ -91,7 +91,7 @@ class Task_Delete(DeleteView):
 
 class Task_Update(UpdateView):
     model = Task
-    fields = ['task', 'description', 'days', 'is_complete']
+    fields = ['task', 'description', 'is_complete']
     template_name = "task_update.html"
     success_url = "/profile/"    
 
@@ -124,5 +124,5 @@ class Days(CreateView):
 class Days_Update(UpdateView):
     model = Day
     fields = ['tasks']
-    template_name = "task_update.html"
+    template_name = "day_update.html"
     success_url = "/profile/days/" 

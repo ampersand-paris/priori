@@ -26,30 +26,34 @@
     </div>
     <div class="flex column tasks">
         <div class="flex space-btwn">
-            <h2><a id="white" href="/profile/">To Do:</a></h2>
-            <h2><a>Days</a></h2>
+            <h2><a id="white" href="/profile/">To Do</a></h2>
+            <h2>Days</h2>
         </div>
         {% for day in days %}
-                <div class="flex column task">
-                    <h3>{{ day.day }}</h3>
-                    <p><a href="/profile/days/{{day.pk}}">Assign Task</a></p>
+                <div class="flex column task days">
+                    <div class="flex space-btwn">
+                        <h3>{{ day.day }}</h3>
+                        <h3><a href="/profile/days/{{day.pk}}">+</a></h3>
+                    </div>
                     {% for task in day.tasks.all %}
-                        <p>{{ task.task }}</p>
-                        <p><a href="/profile/{{task.pk}}">Edit</a></p>
-                    <p><a href="/profile/{{task.pk}}/delete">Delete</a></p>
-                    <!-- {% for task in day.task_set.all %}
-                        <p>{{ task.task }}</p>
-                        <p><a href="/profile/{{task.pk}}">Edit</a></p>
-                    <p><a href="/profile/{{task.pk}}/delete">Delete</a></p>
-                    {% endfor %}     -->
+                    <div class="flex space-btwn">
+                        <div>
+                            <p>{{ task.task }}</p>
+                        </div>
+                        <div class="flex column col-center">
+                            <p><a id="green" href="/profile/{{task.pk}}">&#x21a9;</a></p>
+                        </div>
+                    </div>
                     {% endfor %}
                 </div>
         {% endfor %}
         {% if user.is_authenticated %}
-        <form method="POST">
+        <form method="POST" class="task">
             {% csrf_token %}
-            {% bootstrap_form form %}
-            <input type="submit" value="Submit" />
+            <div class="flex space-btwn">
+                {% bootstrap_form form %}
+                <input class="transparent" type="submit" value="+" />
+            </div>
         </form>
         {% endif %}
     </div>

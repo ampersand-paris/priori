@@ -23,8 +23,12 @@
         {% if user.is_authenticated %}
         <form method="POST" class="task">
             {% csrf_token %}
-            {{form.as_p}}
-            <input type="submit" value="Submit" />
+            {{ form.task }}
+            {{ form.description }}
+            <div class="flex space-btwn">
+                {{ form.is_complete }}
+                <input class="transparent" type="submit" value="+" />
+            </div>
         </form>
         {% endif %}
     </div>

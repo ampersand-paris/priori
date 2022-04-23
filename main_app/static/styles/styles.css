@@ -68,6 +68,15 @@ input[type="text"] {
 
 input:focus{
     outline: none;
+    color: var(--main-green);
+}
+
+input[type="checkbox"] {
+    border: 1px solid white;
+}
+
+input[type="checkbox"]:checked {
+    background-color: var(--main-green);
 }
 
 .transparent {
@@ -227,4 +236,10 @@ body {
 
 .priori-title {
     width: 33vW;
+}
+
+/* === DAYS STYLES === */
+
+.days h3 a, h3 {
+    color: var(--main-green);
 }
