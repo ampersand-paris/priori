@@ -5,8 +5,10 @@ from django.http import HttpResponseRedirect
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.models import User
 from django.views.generic.edit import CreateView
+from django import forms
+from bootstrap_datepicker_plus.widgets import DateTimePickerInput
 
-from main_app.models import Task
+from main_app.models import Day, Task
 
 
 # Create your views here.
@@ -74,5 +76,13 @@ class Profile(CreateView):
 class Home(TemplateView):
     template_name = "home.html"
 
-class Days(TemplateView):
+class Days(CreateView):
+    model = Day
+    fields = ['day', 'tasks']
+    def get_form(self):
+        form = super().get_form()
+        form.fields['day'].widget = DateTimePickerInput()
+        return form
+        
     template_name = "days.html"
+    success_url = "/profile/days"

@@ -29,7 +29,7 @@ class Task(models.Model):
 
 class Day(models.Model):
 
-    day = models.CharField(max_length=10, choices=DAY_CHOICES)
+    day = models.DateField()
     tasks = models.ManyToManyField(Task)
 
     def __str__(self):
