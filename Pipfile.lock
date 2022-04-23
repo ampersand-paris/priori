@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "f0bc99d8befc7af7f0ef83fbdfe54a03aa688361a46bb14ca92d411ba6a114c9"
+            "sha256": "38f272e56c1da2e986b10e83b7fa09c17a352b722b2d5edcbb1853910d32fac1"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -38,6 +38,14 @@
             ],
             "markers": "python_version >= '3.8'",
             "version": "==4.0.4"
+        },
+        "django-bootstrap-datepicker-plus": {
+            "hashes": [
+                "sha256:2ce1eb7d0d45ac01fcef6fc5e9823b01e0727088b781b16c1be642bf76514ada",
+                "sha256:c5dce41585c2b57cda52e3f698f44544090ccf2eed1d1c5bb9e828f36951b3fc"
+            ],
+            "index": "pypi",
+            "version": "==4.0.0"
         },
         "django-heroku": {
             "hashes": [
