@@ -108,3 +108,9 @@ class Days(CreateView):
         context["days"] = Day.objects.all()
         # tasks = Task.objects.filter(user=user)
         return context
+
+class Days_Update(UpdateView):
+    model = Day
+    fields = ['tasks']
+    template_name = "task_update.html"
+    success_url = "/profile/days/" 
