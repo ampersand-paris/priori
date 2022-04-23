@@ -6,7 +6,7 @@ from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.models import User
 from django.views.generic.edit import CreateView
 from django import forms
-from bootstrap_datepicker_plus.widgets import DateTimePickerInput
+from bootstrap_datepicker_plus.widgets import DatePickerInput
 
 from main_app.models import Day, Task
 
@@ -78,11 +78,23 @@ class Home(TemplateView):
 
 class Days(CreateView):
     model = Day
-    fields = ['day', 'tasks']
-    def get_form(self):
-        form = super().get_form()
-        form.fields['day'].widget = DateTimePickerInput()
-        return form
-        
+    fields = ['day']
     template_name = "days.html"
     success_url = "/profile/days"
+
+    def get_form(self):
+        form = super().get_form()
+        form.fields['day'].widget = DatePickerInput()
+        return form
+
+    def form_valid(self, form):
+        self.object = form.save(commit=False)
+        self.object.user = self.request.user
+        self.object.save()
+        return HttpResponseRedirect("/profile/days")
+        
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["days"] = Day.objects.all()
+        # tasks = Task.objects.filter(user=user)
+        return context

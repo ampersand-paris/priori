@@ -31,6 +31,7 @@ class Day(models.Model):
 
     day = models.DateField()
     tasks = models.ManyToManyField(Task)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.day
+        return self.day.strftime("%B %d, %Y")

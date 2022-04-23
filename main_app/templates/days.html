@@ -7,6 +7,7 @@
 {% block body %}
 
 {% load bootstrap4 %}
+{% bootstrap_css %}
 {% bootstrap_javascript jquery='full' %}
 {{ form.media }}
 
@@ -24,7 +25,14 @@
         </div>
     </div>
     <div>
-        {% bootstrap_css %}
+        <h2>Days</h2>
+        {% for day in days %}
+            {% if day.user == user %}
+                <div class="flex column task">
+                    <h3>{{ day.day }}</h3>
+                </div>
+            {% endif %}
+        {% endfor %}
         {% if user.is_authenticated %}
         <form method="POST">
             {% csrf_token %}
