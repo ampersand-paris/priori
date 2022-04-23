@@ -61,7 +61,15 @@ class Profile(CreateView):
     template_name = "todos.html"
     success_url = "/profile/"
     
-    
+    def get_form(self, form_class=None):
+        if form_class is None:
+            form_class = self.get_form_class()
+
+            form = super(Profile, self).get_form(form_class)
+            form.fields['task'].widget.attrs={'placeholder': 'New Task'}
+            form.fields['description'].widget.attrs={'placeholder': 'Description'}
+            return form
+
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context["tasks"] = Task.objects.all()

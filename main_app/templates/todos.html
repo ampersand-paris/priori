@@ -22,25 +22,33 @@
     <div class="flex column tasks">
         <div class="flex space-btwn">
             <h2>To Do</h2>
-            <span id="white"><h2>|</h2></span>
             <h2><a id="white" href="days/">Days</a></h2>
         </div>
         {% for task in tasks %}
             {% if task.user == user %}
                 {% if task.is_complete == False %}
-                <div class="flex column task">
-                    <h3>{{ task.task }}</h3>
-                    <p>{{ task.description }}</p>
-                    <p><a href="/profile/{{task.pk}}">Edit</a></p>
-                    <p><a href="/profile/{{task.pk}}/delete">Delete</a></p>
+                <div class="flex task space-btwn">
+                    <div class="flex column"> 
+                        <h3>{{ task.task }}</h3>
+                        <p>{{ task.description }}</p>
+                    </div>
+                    <div class="flex space-btwn column col-center">
+                        <p><a id="green" href="/profile/{{task.pk}}">&#x21a9;</a></p>
+                        <p><a id="red" href="/profile/{{task.pk}}/delete">X</a></p>
+                    </div>
                 </div>
                 {% endif %}
                 {% if task.is_complete == True %}
-                <div class="flex column task">
-                    <h3>{{ task.task }}</h3>
-                    <p>{{ task.description }}</p>
-                    <p><a href="/profile/{{task.pk}}">Edit</a></p>
-                    <p><a href="/profile/{{task.pk}}/delete">Delete</a></p>
+                <div class="flex task space-btwn">
+                    <div class="flex column"> 
+                        <h3>{{ task.task }}</h3>
+                        <p>{{ task.description }}</p>
+                    </div>
+                    <div class="flex space-btwn column col-center">
+                        <p><a id="green" href="/profile/{{task.pk}}">&#x21a9;</a></p>
+                        <p><a id="red" href="/profile/{{task.pk}}/delete">X</a></p>
+                    </div>
+                </div>
                 {% endif %}
             {% endif %}
         {% endfor %}
@@ -48,8 +56,10 @@
         <form method="POST" class="task">
             {% csrf_token %}
             {{ form.task }}
-            {{ form.description }}
-            <input type="submit" value="+" />
+            <div class="flex space-btwn">
+                {{ form.description }}
+                <input class="transparent" type="submit" value="+" />
+            </div>
         </form>
         {% endif %}
     </div>

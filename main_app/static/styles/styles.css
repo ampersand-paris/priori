@@ -36,6 +36,45 @@ h2 {
     padding: 0;
 }
 
+a {
+    color: white;
+    text-decoration: none;
+}
+
+input{
+    color: white;
+    font-family: century-gothic, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+input[type="text"] {
+    background-color: transparent;
+    border: none;
+}
+
+::placeholder {
+    color: white;
+    font-family: century-gothic, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+input:focus{
+    outline: none;
+}
+
+.transparent {
+    background-color: transparent;
+    border: none;
+}
+
 h3 {
     color: white;
     font-family: century-gothic, sans-serif;
@@ -51,12 +90,21 @@ h3 a {
     text-decoration: none;
 }
 
+/* === COLOR STYLES === */
+
 #white {
     color: white !important;
 }
-body {
-    margin: 0;
+
+#green:hover {
+    color: var(--main-green);
 }
+
+#red:hover {
+    color: red;
+}
+
+/* === BACKGROUND STYLES === */
 
 .background {     
     background: linear-gradient(130deg, var(--main-pink) 0%, var(--main-blue) 50%, 
@@ -76,6 +124,12 @@ body {
     height: calc(100vH - 10px);
     align-items: center;
     width: calc(100vW - 10px);
+}
+
+/* === SPACING STYLES === */
+
+body {
+    margin: 0;
 }
 
 .flex {
