@@ -21,14 +21,24 @@
     </div>
     <div class="flex column tasks">
         <h2>To Do:</h2>
+        <h2><a href="days/">Days:</a></h2>
         {% for task in tasks %}
             {% if task.user == user %}
+                {% if task.is_complete == False %}
                 <div class="flex column task">
                     <h3>{{ task.task }}</h3>
                     <p>{{ task.description }}</p>
                     <p><a href="/profile/{{task.pk}}">Edit</a></p>
                     <p><a href="/profile/{{task.pk}}/delete">Delete</a></p>
                 </div>
+                {% endif %}
+                {% if task.is_complete == True %}
+                <div class="flex column task">
+                    <h3>{{ task.task }}</h3>
+                    <p>{{ task.description }}</p>
+                    <p><a href="/profile/{{task.pk}}">Edit</a></p>
+                    <p><a href="/profile/{{task.pk}}/delete">Delete</a></p>
+                {% endif %}
             {% endif %}
         {% endfor %}
         {% if user.is_authenticated %}

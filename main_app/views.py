@@ -79,7 +79,7 @@ class Task_Delete(DeleteView):
 
 class Task_Update(UpdateView):
     model = Task
-    fields = ['task', 'description']
+    fields = ['task', 'description', 'is_complete']
     template_name = "task_update.html"
     success_url = "/profile/"    
 
