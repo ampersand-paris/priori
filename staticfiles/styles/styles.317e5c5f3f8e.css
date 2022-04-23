@@ -1,0 +1,163 @@
+/* === ROOT STYLES === */
+
+:root {
+    --main-green: #00ff99;
+    --main-pink: #ffcccc;
+    --main-blue: #1b1464;
+}
+
+p {
+    color: white;
+    font-family: century-gothic, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1em;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    color: var(--main-green);
+    font-family: century-gothic, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 3em;
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    color: var(--main-green);
+    font-family: century-gothic, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 2em;
+    margin: 0;
+    padding: 0;
+}
+
+h3 {
+    color: white;
+    font-family: century-gothic, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.25em;
+    margin: 0;
+    padding: 0;
+}
+
+h3 a {
+    color: white;
+    text-decoration: none;
+}
+
+body {
+    margin: 0;
+}
+
+.background {     
+    background: linear-gradient(130deg, var(--main-pink) 0%, var(--main-blue) 50%, 
+    var(--main-blue) 85%, rgba(0, 255, 153, .6) 100%);
+    display: flex;
+    flex-direction: column;
+    height: calc(100vH - 10px);
+    align-items: center;
+    width: calc(100vW - 10px);
+    border: 5px solid var(--main-green);
+}
+
+.background-overlay {
+    background: linear-gradient(240deg, var(--main-pink) 0%,var(--main-pink) 15%, transparent 30%);
+    display: flex;
+    flex-direction: column;
+    height: calc(100vH - 10px);
+    align-items: center;
+    width: calc(100vW - 10px);
+}
+
+.flex {
+    display: flex;
+}
+
+.column {
+    flex-direction: column;
+}
+
+.row {
+    flex-direction: row !important;
+}
+
+.space-btwn {
+    justify-content: space-between;
+}
+
+.col-center {
+    align-items: center;
+}
+
+/* === HEADER STYLES === */
+
+.header {
+    margin-top: 2vH;
+    width: 33vW;
+}
+
+/* === TODOS STYLES === */
+
+.tasks {
+    background-color: rgba(255, 255, 255, .5);
+    border: 2px solid white;
+    border-radius: 20px;
+    margin-top: 4vH;
+    padding: 2vH 2vW;
+    width: 35vW;
+}
+
+.task {
+    border-top: 2px solid white;
+    padding: .5vH 0vW;
+}
+
+/* === TODOS STYLES === */
+.home-page {
+    margin-top: 20vH;
+    width: 33vW;
+}
+
+.home-button {
+    background-color: transparent;
+    border-left: 2px solid var(--main-green);
+    border-right: 2px solid var(--main-green);
+    border-top: none;
+    border-bottom: none;
+    border-radius: 20px;
+    display: inline;
+    font-family: century-gothic, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.5em;
+    margin-top: 2vH;
+    padding: 1vH 0vW;
+    text-align: center;
+    text-transform: uppercase;
+    width: 33vW;
+}
+
+.home-button a {
+    color: white;
+    text-decoration: none;
+}
+
+.home-button:hover {
+    background: rgba(255, 255, 255, .5);
+    border-left: 2px solid white;
+    border-right: 2px solid white;
+}
+
+.home-buttons{
+    margin-top: 10vH;
+}
+
+.priori-title {
+    width: 33vW;
+}
