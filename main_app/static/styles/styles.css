@@ -196,6 +196,10 @@ body {
     align-items: center;
 }
 
+.vert-center {
+    align-items: center;
+}
+
 #margin-top {
     margin-top: 10vH;
 }
@@ -305,3 +309,26 @@ body {
 }
 /* === DAYS STYLES === */
 
+.day-delete{
+    margin-right: 2vW !important;
+    text-align: right;
+}
+
+.incomplete-days {
+    height: 16px;
+    width: 16px;
+    border: 2px solid white;
+    border-radius: 50%;
+    margin-right: 2vW;
+    margin-top: .5vH;
+}
+
+.complete-days {
+    height: 16px;
+    width: 16px;
+    border: 2px solid white;
+    border-radius: 50%;
+    background-color: var(--main-green);
+    margin-right: 2vW;
+    margin-top: .5vH;
+}

@@ -33,18 +33,42 @@
                 <div class="flex column task days">
                     <div class="flex space-btwn">
                         <h3 class="green">{{ day.day }}</h3>
-                        <h3><a href="/profile/days/{{day.pk}}">+</a></h3>
-                    </div>
-                    {% for task in day.tasks.all %}
-                    <div class="flex space-btwn">
-                        <div>
-                            <p>{{ task.task }}</p>
-                        </div>
                         <div class="flex column col-center">
-                            <p><a id="green" href="/profile/{{task.pk}}">&#x21a9;</a></p>
-                        </div>
+                            <h3><a id="green" href="/profile/days/{{day.pk}}">+</a></h3>
+                        </div>    
                     </div>
-                    {% endfor %}
+                {% for task in day.tasks.all %}
+                    {% if task.is_complete == False %}
+                        <div class="flex space-btwn vert-center">
+                            <div class="flex">
+                                <div class="incomplete-days">
+                                </div>
+                                <div class="flex column"> 
+                                    <h3>{{ task.task }}</h3>
+                                </div>
+                            </div>
+                            <div class="flex space-btwn column col-center">
+                                <p><a id="green" href="/profile/{{task.pk}}">&#x21a9;</a></p>
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+                {% for task in day.tasks.all %}
+                    {% if task.is_complete == True %}
+                        <div class="flex space-btwn vert-center">
+                            <div class="flex">
+                                <div class="complete-days">
+                                </div>
+                                <div class="flex column"> 
+                                    <h3>{{ task.task }}</h3>
+                                </div>
+                            </div>
+                            <div class="flex space-btwn column col-center">
+                                <p><a id="green" href="/profile/{{task.pk}}">&#x21a9;</a></p>
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
                 </div>
         {% endfor %}
         {% if user.is_authenticated %}

@@ -43,6 +43,10 @@
                     </div>
                 </div>
                 {% endif %}
+            {% endif %}
+        {% endfor %}
+        {% for task in tasks %}
+            {% if task.user == user %}
                 {% if task.is_complete == True %}
                 <div class="flex task space-btwn">
                     <div class="flex">

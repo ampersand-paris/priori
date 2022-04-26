@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    PRIORI Days Update
+{% endblock %}
+
+{% block body %}
+    <div class="header">
+        <div class="flex space-btwn">
+            <h1>P</h1><h1>R</h1><h1>I</h1><h1>O</h1><h1>R</h1><h1>I</h1>
+        </div>
+        <div>
+            {% if user.is_authenticated %}
+                <div class="flex space-btwn"> 
+                    <h3>{{ user.username }}</h3>
+                    <h3><a href="/accounts/logout/">Logout</a></h3>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+    <div class="flex column tasks">
+        <h2>Update:</h2>
+        {% if user.is_authenticated %}
+        <form method="POST" class="task">
+            {% csrf_token %}
+            {{ form.day }}
+            <div class="flex space-btwn">
+                <p>Assign up to three tasks:
+                <br>Hold Cmd to select multiple.
+                </p>
+                {{ form.tasks }}
+                <input id="green" class="transparent" type="submit" value="+" />
+            </div>
+        </form>
+        {% endif %}
+    </div>
+    
+{% endblock %}

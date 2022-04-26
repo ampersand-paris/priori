@@ -123,6 +123,11 @@ class Days(CreateView):
 
 class Days_Update(UpdateView):
     model = Day
-    fields = ['tasks']
-    template_name = "day_update.html"
+    fields = ['day', 'tasks']
+    template_name = "days_update.html"
     success_url = "/profile/days/" 
+
+class Days_Delete(DeleteView):
+        model = Day
+        template_name = "task_delete.html"
+        success_url = "/profile/"
