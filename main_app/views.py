@@ -142,16 +142,11 @@ class Days_Update(UpdateView):
     template_name = "days_update.html"
     success_url = "/profile/days/" 
 
-    def clean_day(self):
-        day = self.cleaned_data.get('day')
-        if not day:
-            raise ValidationError("This field is required.")
-        
-        for instance in Day.objects.all():
-            if instance.day == day:
-                raise ValidationError(day + ' has already been created. Please choose a different day.')
-
-        return day
+    def clean_days(self):
+        tasks = self.cleaned_data['tasks']
+        if len(tasks) > 3:
+            raise ValidationError("You have reached a maximum of three tasks for your day")
+        return tasks
 
 class Days_Delete(DeleteView):
         model = Day

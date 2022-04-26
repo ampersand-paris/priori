@@ -30,51 +30,59 @@
             <h2>Days</h2>
         </div>
         {% for day in days %}
+            {% if day.tasks.count > 3 %}
                 <div class="flex column task days">
                     <div class="flex space-btwn">
                         <h3 class="green">{{ day.day }}</h3>
                         <div class="flex column col-center">
-                            <h3><a id="green" href="/profile/days/{{day.pk}}">+</a></h3>
+                            <h3><a id="green" href="/profile/days/{{day.pk}}">-</a></h3>
                         </div>    
                     </div>
-                {% for task in day.tasks.all %}
-                    {% if task.is_complete == False %}
-                        <div class="flex space-btwn vert-center">
-                            <div class="flex">
-                                <div class="incomplete-days">
-                                </div>
-                                <div class="flex column"> 
-                                    <h3>{{ task.task }}</h3>
-                                </div>
-                            </div>
-                            <div class="flex space-btwn column col-center">
-                                <p><a id="green" href="/profile/{{task.pk}}">&#x21a9;</a></p>
-                            </div>
+                    <div class="flex space-btwn vert-center">
+                        <div class="flex column"> 
+                            <h3>You maximum of three tasks for this day. Please edit and take something off your plate.</h3>
                         </div>
-                    {% endif %}
-                {% endfor %}
-                {% for task in day.tasks.all %}
-                    {% if task.is_complete == True %}
-                        <div class="flex space-btwn vert-center">
-                            <div class="flex">
-                                <div class="complete-days">
+                    </div>
+                {% else %}
+                        {% for task in day.tasks.all %}
+                            {% if task.is_complete == False %}
+                                <div class="flex space-btwn vert-center">
+                                    <div class="flex">
+                                        <div class="incomplete-days">
+                                        </div>
+                                        <div class="flex column"> 
+                                            <h3>{{ task.task }}</h3>
+                                        </div>
+                                    </div>
+                                    <div class="flex space-btwn column col-center">
+                                        <p><a id="green" href="/profile/{{task.pk}}">&#x21a9;</a></p>
+                                    </div>
                                 </div>
-                                <div class="flex column"> 
-                                    <h3>{{ task.task }}</h3>
+                            {% endif %}
+                        {% endfor %}
+                    {% for task in day.tasks.all %}
+                        {% if task.is_complete == True %}
+                            <div class="flex space-btwn vert-center">
+                                <div class="flex">
+                                    <div class="complete-days">
+                                    </div>
+                                    <div class="flex column"> 
+                                        <h3>{{ task.task }}</h3>
+                                    </div>
+                                </div>
+                                <div class="flex space-btwn column col-center">
+                                    <p><a id="green" href="/profile/{{task.pk}}">&#x21a9;</a></p>
                                 </div>
                             </div>
-                            <div class="flex space-btwn column col-center">
-                                <p><a id="green" href="/profile/{{task.pk}}">&#x21a9;</a></p>
-                            </div>
-                        </div>
-                    {% endif %}
-                {% endfor %}
+                        {% endif %}
+                    {% endfor %}
                 <div class="flex space-btwn">
                     <div class="spacer"></div>
                     <h3><a id="red" href="/profile/days/{{day.pk}}/delete">x</a></h3>
                 </div>
 
                 </div>
+                {% endif %}
         {% endfor %}
         {% if user.is_authenticated %}
         <form method="POST" class="task">
