@@ -13,10 +13,10 @@
             <p>for perfectionists everywhere</p>
         </div>
         <div class="flex column col-center home-buttons">
-            <form method="POST" action="{% url 'login' %}">
+            <form class="flex column col-center " method="POST" action="{% url 'login' %}">
                 {% csrf_token %}
                 {{ form.as_p }}
-                <input class="home-button" type="submit" value="login" />
+                <input class="home-button" id="margin-top" type="submit" value="login" />
                 <input type="hidden" name="next" value="{{ next }}" />
             </form>
         </div>

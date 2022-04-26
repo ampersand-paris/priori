@@ -11,7 +11,7 @@ p {
     font-family: century-gothic, sans-serif;
     font-weight: 400;
     font-style: normal;
-    font-size: 20px;
+    font-size: 16px;
     margin: 0;
     padding: 0;
 }
@@ -36,6 +36,21 @@ h2 {
     padding: 0;
 }
 
+h3 {
+    color: white;
+    font-family: century-gothic, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+h3 a {
+    color: white;
+    text-decoration: none;
+}
+
 a {
     color: white;
     text-decoration: none;
@@ -56,11 +71,18 @@ input[type="text"] {
     border: none;
 }
 
+input[name="username"] {
+    width: 60%;
+}
+
+input[name="password1"] {
+    width: 62%;
+}
+
 input[type="password"] {
     background-color: transparent;
     border: none;
 }
-
 
 ::placeholder {
     color: white;
@@ -90,21 +112,6 @@ input[type="checkbox"]:checked {
     border: none;
 }
 
-h3 {
-    color: white;
-    font-family: century-gothic, sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 1.25em;
-    margin: 0;
-    padding: 0;
-}
-
-h3 a {
-    color: white;
-    text-decoration: none;
-}
-
 ul {
     list-style-type: circle;
     padding-left: 20px;
@@ -123,6 +130,14 @@ li {
 
 #white {
     color: white !important;
+}
+
+.white {
+    color: white !important;
+}
+
+.green {
+    color: var(--main-green);
 }
 
 #green:hover {
@@ -179,6 +194,10 @@ body {
 
 .col-center {
     align-items: center;
+}
+
+#margin-top {
+    margin-top: 10vH;
 }
 
 /* === FORM STYLES === */
@@ -265,8 +284,24 @@ body {
     width: 33vW;
 }
 
+.incomplete {
+    height: 18px;
+    width: 18px;
+    border: 2px solid white;
+    border-radius: 50%;
+    margin-right: 2vW;
+    margin-top: 1vH;
+}
+
+.complete {
+    height: 18px;
+    width: 18px;
+    border: 2px solid white;
+    border-radius: 50%;
+    background-color: var(--main-green);
+    margin-right: 2vW;
+    margin-top: 1vH;
+
+}
 /* === DAYS STYLES === */
 
-.days h3 a, h3 {
-    color: var(--main-green);
-}

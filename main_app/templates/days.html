@@ -32,7 +32,7 @@
         {% for day in days %}
                 <div class="flex column task days">
                     <div class="flex space-btwn">
-                        <h3>{{ day.day }}</h3>
+                        <h3 class="green">{{ day.day }}</h3>
                         <h3><a href="/profile/days/{{day.pk}}">+</a></h3>
                     </div>
                     {% for task in day.tasks.all %}

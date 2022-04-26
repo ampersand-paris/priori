@@ -27,10 +27,15 @@
         {% for task in tasks %}
             {% if task.user == user %}
                 {% if task.is_complete == False %}
+                
                 <div class="flex task space-btwn">
-                    <div class="flex column"> 
-                        <h3>{{ task.task }}</h3>
-                        <p>{{ task.description }}</p>
+                    <div class="flex">
+                        <div class="incomplete">
+                        </div>
+                        <div class="flex column"> 
+                            <h3>{{ task.task }}</h3>
+                            <p>{{ task.description }}</p>
+                        </div>
                     </div>
                     <div class="flex space-btwn column col-center">
                         <p><a id="green" href="/profile/{{task.pk}}">&#x21a9;</a></p>
@@ -40,15 +45,15 @@
                 {% endif %}
                 {% if task.is_complete == True %}
                 <div class="flex task space-btwn">
-                    <div class="flex column"> 
+                    <div class="flex">
                         <div class="complete">
                         </div>
-                        <h3>{{ task.task }}</h3>
-                        <p>{{ task.description }}</p>
+                        <div class="flex column"> 
+                            <h3>{{ task.task }}</h3>
+                            <p>{{ task.description }}</p>
+                        </div>
                     </div>
                     <div class="flex space-btwn column col-center">
-                        <div class="incomplete">
-                        </div>
                         <p><a id="green" href="/profile/{{task.pk}}">&#x21a9;</a></p>
                         <p><a id="red" href="/profile/{{task.pk}}/delete">X</a></p>
                     </div>
