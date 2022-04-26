@@ -105,6 +105,20 @@ h3 a {
     text-decoration: none;
 }
 
+ul {
+    list-style-type: circle;
+    padding-left: 20px;
+}
+li {
+    color: white;
+    font-family: century-gothic, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+}
+
 /* === COLOR STYLES === */
 
 #white {
@@ -183,6 +197,13 @@ body {
     margin-top: 2vH;
     width: 33vW;
 }
+
+/* === SIGNUP STYLES === */
+
+.helptext {
+    display: none;
+}
+
 
 /* === TODOS STYLES === */
 
