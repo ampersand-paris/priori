@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.core.exceptions import ValidationError
 
 # Create your models here.
 
@@ -17,7 +18,7 @@ DAY_CHOICES = (
 
 class Task(models.Model):
 
-    task = models.CharField(max_length=50)
+    task = models.CharField(max_length=50, blank=False)
     description = models.CharField(max_length=250)
     # days = models.ManyToManyField(Day)
     is_complete = models.BooleanField(default=False)
@@ -31,7 +32,7 @@ class Task(models.Model):
 
 class Day(models.Model):
 
-    day = models.DateField()
+    day = models.DateField(blank=True, unique=True)
     tasks = models.ManyToManyField(Task)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 

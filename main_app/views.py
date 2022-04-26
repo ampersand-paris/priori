@@ -8,6 +8,7 @@ from django.views.generic.edit import View, CreateView, UpdateView, DeleteView
 from django import forms
 from bootstrap_datepicker_plus.widgets import DatePickerInput
 from django.forms import TextInput
+from django.core.exceptions import ValidationError
 
 from main_app.models import Day, Task
 
@@ -104,6 +105,10 @@ class Days(CreateView):
     template_name = "days.html"
     success_url = "/profile/days"
 
+    class Meta:
+        model = Day
+        fields = ['day']
+
     def get_form(self):
         form = super().get_form()
         form.fields['day'].widget = DatePickerInput()
@@ -121,13 +126,34 @@ class Days(CreateView):
         # tasks = Task.objects.filter(user=user)
         return context
 
+    def clean_day(self):
+        input = self.cleaned_data.get('day')
+        if not input:
+            raise ValidationError("This field is required.")
+        
+        for instance in Day.objects.all():
+            if instance.day == input:
+                raise ValidationError(input + ' has already been created. Please choose a different day.')
+        return input    
+
 class Days_Update(UpdateView):
     model = Day
     fields = ['day', 'tasks']
     template_name = "days_update.html"
     success_url = "/profile/days/" 
 
+    def clean_day(self):
+        day = self.cleaned_data.get('day')
+        if not day:
+            raise ValidationError("This field is required.")
+        
+        for instance in Day.objects.all():
+            if instance.day == day:
+                raise ValidationError(day + ' has already been created. Please choose a different day.')
+
+        return day
+
 class Days_Delete(DeleteView):
         model = Day
         template_name = "task_delete.html"
-        success_url = "/profile/"
+        success_url = "/profile/days/"

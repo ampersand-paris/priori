@@ -69,6 +69,11 @@
                         </div>
                     {% endif %}
                 {% endfor %}
+                <div class="flex space-btwn">
+                    <div class="spacer"></div>
+                    <h3><a id="red" href="/profile/days/{{day.pk}}/delete">x</a></h3>
+                </div>
+
                 </div>
         {% endfor %}
         {% if user.is_authenticated %}

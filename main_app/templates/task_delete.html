@@ -22,15 +22,18 @@
         <h2>Delete:</h2>
         <div class="flex space-btwn">
             <div class="flex column">
-                <p>{{ task.task }}</p>
+                <h3>{{ task.task }}</h3>
                 <p>{{ task.description }}</p>
             </div>
-            {% if user.is_authenticated %}
-            <form method="POST">
-                {% csrf_token %}
-                <input id="red" class="transparent" type="submit" value="x" />
-            </form>
-            {% endif %}
+            <div class="flex column space-btwn">
+                <div class="spacer"></div>
+                {% if user.is_authenticated %}
+                <form method="POST">
+                    {% csrf_token %}
+                    <input id="red" class="transparent" type="submit" value="x" />
+                </form>
+                {% endif %}
+            </div>
         </div>
     </div>
     

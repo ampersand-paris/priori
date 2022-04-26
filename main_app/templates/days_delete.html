@@ -33,9 +33,10 @@
                         </div>
                     </div>
                 {% endfor %}
-            </div>
+            </div>  
             {% if user.is_authenticated %}
             <form method="POST">
+                
                 {% csrf_token %}
                 <input id="red" class="transparent" type="submit" value="x" />
             </form>
