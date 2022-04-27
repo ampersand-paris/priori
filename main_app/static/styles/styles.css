@@ -256,6 +256,11 @@ body {
     width: 35vW;
 }
 
+.binder{
+    max-height: 60vH;
+    overflow: scroll;
+}
+
 .task {
     border-top: 2px solid white;
     padding: .5vH 0vW;

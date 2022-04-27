@@ -19,7 +19,7 @@ DAY_CHOICES = (
 class Task(models.Model):
 
     task = models.CharField(max_length=50, blank=False)
-    description = models.CharField(max_length=250)
+    description = models.CharField(max_length=250, blank=True)
     # days = models.ManyToManyField(Day)
     is_complete = models.BooleanField(default=False)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
