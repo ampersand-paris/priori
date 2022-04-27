@@ -112,6 +112,7 @@ class Days(CreateView):
     def get_form(self):
         form = super().get_form()
         form.fields['day'].widget = DatePickerInput()
+        form.fields['day'].widget.attrs={'placeholder': 'New Day'}
         return form
 
     def form_valid(self, form):
@@ -126,15 +127,6 @@ class Days(CreateView):
         # tasks = Task.objects.filter(user=user)
         return context
 
-    def clean_day(self):
-        input = self.cleaned_data.get('day')
-        if not input:
-            raise ValidationError("This field is required.")
-        
-        for instance in Day.objects.all():
-            if instance.day == input:
-                raise ValidationError(input + ' has already been created. Please choose a different day.')
-        return input    
 
 class Days_Update(UpdateView):
     model = Day
