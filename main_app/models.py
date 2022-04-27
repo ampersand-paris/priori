@@ -36,5 +36,8 @@ class Day(models.Model):
     tasks = models.ManyToManyField(Task)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
+    class Meta:
+        ordering = ['day']
+
     def __str__(self):
         return self.day.strftime("%B %d, %Y")
