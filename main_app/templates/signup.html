@@ -16,7 +16,9 @@
             <form method="POST">
                 {% csrf_token %}
                 {{ form.as_p }}
-                <button id="margin-top" class="white home-button" type="submit">Sign up</button>
+                <div class="flex column col-center">
+                    <button id="margin-top" class="white home-button" type="submit">Sign up</button>
+                </div>
             </form>
         </div>
     </div>

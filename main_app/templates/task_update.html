@@ -25,7 +25,7 @@
             {% csrf_token %}
             {{ form.task }}
             {{ form.description }}
-            <div class="flex space-btwn">
+            <div class="flex space-btwn relative">
                 {{ form.is_complete }}
                 <input id="green" class="transparent" type="submit" value="+" />
             </div>

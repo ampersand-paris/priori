@@ -32,12 +32,13 @@ class Task(models.Model):
 
 class Day(models.Model):
 
-    day = models.DateField(blank=True, unique=True)
+    day = models.DateField(blank=True)
     tasks = models.ManyToManyField(Task)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     class Meta:
         ordering = ['day']
+        unique_together = ['day', 'user']
 
     def __str__(self):
         return self.day.strftime("%B %d, %Y")

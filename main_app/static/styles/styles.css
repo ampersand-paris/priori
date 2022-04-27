@@ -109,9 +109,25 @@ input:focus{
     color: var(--main-green);
 }
 
-input[type="checkbox"] {
-    border: 1px solid white;
+/* [type="checkbox"] {
+    opacity: 0;
+    position: absolute;
 }
+
+input[id="id_is_complete"] {
+    min-width: 0.75em;
+    min-height: 0.75em;
+    margin-right: 0.75em;
+    border: 2px solid var(--main-green);
+    border-radius: 50%;
+    display: inline-block; */
+}
+
+/* [type="checkbox"]:checked+label input[id="id_is_complete"] {
+    border-color: white;
+    background: var(--main-green);
+    box-shadow: inset 0 0 0 2px white;
+} */
 
 input[type="checkbox"]:checked {
     background-color: var(--main-green);
@@ -143,6 +159,35 @@ li {
     padding: 0;
 }
 
+select {
+    background-color: transparent;
+    border: 1px solid white;
+    border-radius: 5px;
+    padding: 10px;
+    color: white;
+    font-family: century-gothic, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 14px;
+    outline: none;
+}
+
+&::after {
+    background-color: var(--main-green);
+}
+
+.select-items {
+    display: none;
+}
+
+option:hover {
+    background-color: var(--main-green);
+}
+
+select:after{
+    color: white;
+    background-color: var(--main-green);
+}
 /* === COLOR STYLES === */
 
 #white {
@@ -207,6 +252,10 @@ body {
 
 .space-btwn {
     justify-content: space-between;
+}
+
+.relative {
+    position: relative;
 }
 
 .col-center {
@@ -353,4 +402,31 @@ body {
     background-color: var(--main-green);
     margin-right: 2vW;
     margin-top: .5vH;
+}
+
+/* === DAYS STYLES === */
+
+@media only screen and (max-width: 600px){
+	.header {
+        margin-top: 2vH;
+        width: 90vW;
+    }
+
+    .tasks {
+        width: 90vW;
+    }
+
+    .home-page {
+        margin-top: 20vH;
+        width: 90vW;
+    }
+    
+    .home-button {
+        width: 90vW;
+    }
+
+    .priori-title {
+        width: 90vW;
+    }
+
 }
